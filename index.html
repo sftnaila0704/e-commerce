@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glow Beauty - Skincare Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+      /* Custom CSS */
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      .accordion.active .accordion-content {
+        max-height: 500px;
+      }
+      .testimonial-slide {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+      .testimonial-slide.active {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+      <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c53b9557-9469-41b5-b262-2e206cadfc85.png" alt="Glow Beauty brand logo with a simple droplet symbol in blue" class="h-10" />
+          <span class="text-xl font-bold text-blue-600">Glow Beauty</span>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#home" class="text-gray-700 hover:text-blue-600">Home</a>
+          <a href="#products" class="text-gray-700 hover:text-blue-600">Produk</a>
+          <a href="#about" class="text-gray-700 hover:text-blue-600">Tentang Kami</a>
+          <a href="#testimonials" class="text-gray-700 hover:text-blue-600">Testimonial</a>
+          <a href="#blog" class="text-gray-700 hover:text-blue-600">Blog</a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="#" class="text-gray-700 hover:text-blue-600"><i class="fas fa-search"></i></a>
+          <a href="#" class="text-gray-700 hover:text-blue-600"><i class="fas fa-shopping-cart"></i></a>
+          <button class="md:hidden text-gray-700 focus:outline-none">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-r from-blue-50 to-purple-50">
+      <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-8 md:mb-0">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">Kulit Sehat Dimulai di Sini</h1>
+          <p class="text-lg text-gray-600 mb-8">Temukan solusi perawatan kulit kami yang telah terbukti secara klinis, yang dirancang untuk semua jenis kulit. Rutinitas sederhana dan efektif untuk kulit yang tampak sehat dan berseri.</p>
+          <div class="flex space-x-4">
+            <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition duration-300"> Shop Now </a>
+            <a href="#about" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-full font-medium transition duration-300"> Learn More </a>
+          </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a08a0431-6b93-4e3d-ad21-8980aba95bcc.png"
+            alt="Happy woman applying facial serum with clean beauty products on marble bathroom counter"
+            class="rounded-lg shadow-xl"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section id="products" class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Product Collection</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <!-- Product 1 -->
+          <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/854cc99d-affd-4ded-bffc-90963f986406.png"
+                alt="Gentle hydrating cleanser bottle with pump dispenser against pink marble background"
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold">New</div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-800 mb-1">Hydrating Cleanser</h3>
+              <p class="text-gray-600 text-sm mb-2">Formula lembut untuk semua jenis kulit</p>
+              <div class="flex justify-between items-center">
+                <span class="text-blue-600 font-bold">$24.00</span>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-full text-sm transition duration-300">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e6440f91-12f2-4011-9280-ca4bcecf2554.png"
+                alt="Vitamin C serum with dropper dispenser and dewy skin effect in product demonstration"
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-semibold">Bestseller</div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-800 mb-1">Vitamin C Serum</h3>
+              <p class="text-gray-600 text-sm mb-2">Mencerahkan dan mengurangi bintik hitam</p>
+              <div class="flex justify-between items-center">
+                <span class="text-blue-600 font-bold">$36.00</span>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-full text-sm transition duration-300">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a99ee99e-7b93-4b89-8a47-3fa2a8fb038b.png"
+                alt="Lightweight moisturizer jar with fresh green plant and blue packaging"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-800 mb-1">Daily Moisturizer</h3>
+              <p class="text-gray-600 text-sm mb-2">Hidrasi ringan untuk siang dan malam</p>
+              <div class="flex justify-between items-center">
+                <span class="text-blue-600 font-bold">$28.00</span>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-full text-sm transition duration-300">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/52acafdd-658b-48e7-b9dc-591d920eab40.png"
+                alt="Exfoliating face mask with brush applicator and fresh flowers arrangement"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-800 mb-1">Detox Mask</h3>
+              <p class="text-gray-600 text-sm mb-2">Perawatan pembersihan mendalam mingguan</p>
+              <div class="flex justify-between items-center">
+                <span class="text-blue-600 font-bold">$32.00</span>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-full text-sm transition duration-300">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">About Glow Beauty</h2>
+            <p class="text-gray-600 mb-4">
+              Didirikan pada tahun 2025, Glow Beauty lahir dari sebuah ide sederhana: perawatan kulit harus efektif, mudah, dan menyenangkan. Produk kami memadukan bahan-bahan yang telah terbukti secara ilmiah dengan manfaat yang
+              menyehatkan dari unsur-unsur alami.
+            </p>
+            <p class="text-gray-600 mb-6">Setiap formula menjalani pengujian ketat dan disetujui oleh dokter kulit. Kami berkomitmen pada keberlanjutan, praktik bebas kekejaman, dan pelabelan transparan.</p>
+            <div class="flex space-x-4 mb-8">
+              <div class="text-center">
+                <div class="text-3xl font-bold text-blue-600">8+</div>
+                <div class="text-gray-600">Pengalaman Bertahun-tahun</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-blue-600">250k+</div>
+                <div class="text-gray-600">Pelanggan yang Bahagia</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold text-blue-600">30+</div>
+                <div class="text-gray-600">Penghargaan Perawatan Kulit</div>
+              </div>
+            </div>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition duration-300">Our Story</button>
+          </div>
+          <div class="md:w-1/2">
+            <img
+              src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7af87870-8215-40cd-b30a-71c123b5474e.png"
+              alt="Modern skincare laboratory with scientists working on formulations in white coats"
+              class="rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Apa Kata Pelanggan Kami</h2>
+        <div class="relative overflow-hidden">
+          <div id="testimonial-container" class="flex transition-transform duration-300">
+            <!-- Testimonial Slide 1 -->
+            <div class="testimonial-slide p-6 md:p-8 active bg-gray-50 rounded-lg min-w-full">
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/88f4c33a-e6ca-4ca3-ad88-cb0d3d3d0ee9.png"
+                  alt="Portrait of satisfied customer Sarah with clear skin smiling"
+                  class="w-16 h-16 rounded-full mr-4"
+                />
+                <div>
+                  <h4 class="font-semibold text-gray-800">Sarah L.</h4>
+                  <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-600 italic">"Serum Vitamin C mengubah kulit saya! Hanya dalam waktu 4 minggu, bintik hitam saya memudar dan kulit saya lebih cerah dari sebelumnya. Sekarang saya selalu mendapat pujian."</p>
+            </div>
+
+            <!-- Testimonial Slide 2 -->
+            <div class="testimonial-slide p-6 md:p-8 bg-gray-50 rounded-lg min-w-full">
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b650077f-060e-435f-ab32-9fb8970b30e9.png"
+                  alt="Portrait of customer James with before-after skin improvement comparison"
+                  class="w-16 h-16 rounded-full mr-4"
+                />
+                <div>
+                  <h4 class="font-semibold text-gray-800">James P.</h4>
+                  <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-600 italic">
+                "Saya berjuang melawan jerawat selama bertahun-tahun. Pembersih yang Melembabkan dan Masker Detoks membersihkan jerawat saya tanpa membuat kulit saya kering. Akhirnya menemukan produk yang manjur!"
+              </p>
+            </div>
+
+            <!-- Testimonial Slide 3 -->
+            <div class="testimonial-slide p-6 md:p-8 bg-gray-50 rounded-lg min-w-full">
+              <div class="flex items-center mb-4">
+                <img
+                  src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/611e5daa-9092-4c53-bede-96dd5d9a745b.png"
+                  alt="Portrait of customer Maya showcasing radiant skin with bare face"
+                  class="w-16 h-16 rounded-full mr-4"
+                />
+                <div>
+                  <h4 class="font-semibold text-gray-800">Maya V.</h4>
+                  <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-600 italic">"Sebagai seseorang dengan kulit sensitif, saya berhati-hati dalam menggunakan produk. Setiap produk dari Glow Beauty lembut namun efektif. Pelembab Harian adalah andalan saya!"</p>
+            </div>
+          </div>
+          <div class="flex justify-center mt-8 space-x-4">
+            <button id="prev-testimonial" class="text-gray-500 hover:text-blue-600 focus:outline-none">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="next-testimonial" class="text-gray-500 hover:text-blue-600 focus:outline-none">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skincare Routine Guide -->
+    <section id="blog" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Tips Ahli Perawatan Kulit</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Tip 1 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/44d9cc79-adf2-4529-b0f6-ec78ce929b55.png"
+                alt="Morning skincare routine steps laid out on wooden table"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Rutinitas Pagi yang Penting</h3>
+              <p class="text-gray-600 mb-4">Mulailah hari Anda dengan langkah cepat ini untuk mendapatkan kulit bersinar yang bertahan sepanjang hari.</p>
+              <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center"> Read More <i class="fas fa-arrow-right ml-2"></i> </a>
+            </div>
+          </div>
+
+          <!-- Tip 2 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8869c8da-cb0a-489f-9971-9705ff4dd5d6.png"
+                alt="Nighttime skincare products arranged by step sequence"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Ritual Perawatan Kulit Malam Hari</h3>
+              <p class="text-gray-600 mb-4">Maksimalkan perbaikan kulit Anda saat Anda tidur dengan produk yang direkomendasikan para ahli ini.</p>
+              <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center"> Read More <i class="fas fa-arrow-right ml-2"></i> </a>
+            </div>
+          </div>
+
+          <!-- Tip 3 -->
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cb3e1e0e-d649-40c2-b122-4055320fcbc5.png"
+                alt="Seasonal skincare adjustment layout with summer and winter products"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Penyesuaian Perawatan Kulit Musiman</h3>
+              <p class="text-gray-600 mb-4">Pelajari cara menyesuaikan rutinitas Anda saat musim berubah untuk menjaga keseimbangan kulit Anda.</p>
+              <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center"> Read More <i class="fas fa-arrow-right ml-2"></i> </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Pertanyaan yang Sering Diajukan</h2>
+        <div class="max-w-3xl mx-auto">
+          <!-- FAQ Item 1 -->
+          <div class="accordion mb-4 border-b border-gray-200 pb-4">
+            <button class="accordion-button flex justify-between items-center w-full text-left focus:outline-none">
+              <h3 class="font-semibold text-gray-800">Untuk jenis kulit apa produk Anda cocok?</h3>
+              <i class="fas fa-plus text-blue-600"></i>
+            </button>
+            <div class="accordion-content mt-2 text-gray-600">
+              perawatan kulit kami dirancang agar bermanfaat secara universal, dengan formulasi yang sesuai untuk jenis kulit kering, berminyak, kombinasi, dan sensitif. Setiap halaman produk menentukan jenis kulit mana yang paling cocok
+              untuknya, dan kuis kami dapat membantu Anda menemukan rutinitas yang sempurna.
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="accordion mb-4 border-b border-gray-200 pb-4">
+            <button class="accordion-button flex justify-between items-center w-full text-left focus:outline-none">
+              <h3 class="font-semibold text-gray-800">Berapa lama sampai saya melihat hasil dari produk Anda?</h3>
+              <i class="fas fa-plus text-blue-600"></i>
+            </button>
+            <div class="accordion-content mt-2 text-gray-600">
+              Sementara beberapa pelanggan merasakan peningkatan hanya dalam waktu 1-2 minggu, perubahan yang paling signifikan terjadi setelah penggunaan yang konsisten selama 4-6 minggu. Pembaruan kulit memerlukan waktu, dan kami sarankan
+              untuk menjalani siklus perawatan kulit penuh (sekitar 30 hari) sebelum menilai hasilnya.
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="accordion mb-4 border-b border-gray-200 pb-4">
+            <button class="accordion-button flex justify-between items-center w-full text-left focus:outline-none">
+              <h3 class="font-semibold text-gray-800">Apakah produk Anda diuji pada hewan?</h3>
+              <i class="fas fa-plus text-blue-600"></i>
+            </button>
+            <div class="accordion-content mt-2 text-gray-600">
+              Tentu saja tidak. Glow Beauty 100% bebas dari kekejaman. Kami tidak pernah melakukan uji coba pada hewan, dan semua pemasok kami harus menyatakan bahwa bahan-bahan yang mereka gunakan juga bebas dari kekejaman. Kami bangga
+              telah disertifikasi oleh Leaping Bunny dan program Beauty Without Bunnies milik PETA.
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="accordion mb-4 border-b border-gray-200 pb-4">
+            <button class="accordion-button flex justify-between items-center w-full text-left focus:outline-none">
+              <h3 class="font-semibold text-gray-800">Apa kebijakan pengembalian Anda?</h3>
+              <i class="fas fa-plus text-blue-600"></i>
+            </button>
+            <div class="accordion-content mt-2 text-gray-600">
+              Kami menawarkan jaminan kepuasan selama 60 hari. Jika Anda tidak puas dengan pembelian Anda karena alasan apa pun, cukup hubungi tim layanan pelanggan kami untuk pengembalian dana penuh atau penukaran. Produk harus terisi
+              setidaknya 50% agar memenuhi syarat untuk pengembalian dana.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-blue-600 text-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Bergabunglah dengan Komunitas Perawatan Kulit Kami</h2>
+        <p class="mb-8 max-w-2xl mx-auto">Daftar ke buletin kami untuk menerima kiat perawatan kulit dari ahli, penawaran eksklusif, dan akses awal ke produk baru.</p>
+        <div class="max-w-md mx-auto flex">
+          <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-full focus:outline-none text-gray-800" />
+          <button class="bg-blue-800 hover:bg-blue-900 px-6 py-3 rounded-r-full font-medium transition duration-300">Subscribe</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center space-x-2 mb-4">
+              <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/06475f27-0a5c-4190-8c88-f5827f65601b.png" alt="Glow Beauty brand logo in white version" class="h-10" />
+              <span class="text-xl font-bold">Glow Beauty</span>
+            </div>
+            <p class="text-gray-400 mb-4">Perawatan kulit yang sederhana dan efektif yang didukung oleh sains.</p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-pinterest"></i></a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Shop</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-white">Semua Produk</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Pendatang Baru</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Terlaris</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Set Perawatan Kulit</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Kartu Hadiah</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Help</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Pengiriman & Pengembalian</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Lacak Pesanan</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Hubungi Kami</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white"> Kebijakan Privasi</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Contact</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt mt-1 mr-3 text-blue-400"></i>
+                <span class="text-gray-400">123 Skincare Ave, Suite 101<br />Kota Los Angeles, California 90210</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone-alt mr-3 text-blue-400"></i>
+                <span class="text-gray-400">(800) 555-1234</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope mr-3 text-blue-400"></i>
+                <span class="text-gray-400">hello@glowbeauty.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+          <p>© 2023 Glow Beauty. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle functionality would go here
+      document.addEventListener("DOMContentLoaded", function () {
+        // Testimonial Carousel
+        const testimonials = document.querySelectorAll(".testimonial-slide");
+        const prevBtn = document.getElementById("prev-testimonial");
+        const nextBtn = document.getElementById("next-testimonial");
+        let currentTestimonial = 0;
+
+        function showTestimonial(index) {
+          testimonials.forEach((testimonial, i) => {
+            if (i === index) {
+              testimonial.classList.add("active");
+            } else {
+              testimonial.classList.remove("active");
+            }
+          });
+        }
+
+        prevBtn.addEventListener("click", () => {
+          currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+          showTestimonial(currentTestimonial);
+        });
+
+        nextBtn.addEventListener("click", () => {
+          currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+          showTestimonial(currentTestimonial);
+        });
+
+        // FAQ Accordion
+        const accordions = document.querySelectorAll(".accordion");
+
+        accordions.forEach((accordion) => {
+          const button = accordion.querySelector(".accordion-button");
+          const content = accordion.querySelector(".accordion-content");
+          const icon = button.querySelector("i");
+
+          button.addEventListener("click", () => {
+            accordion.classList.toggle("active");
+
+            if (accordion.classList.contains("active")) {
+              icon.classList.replace("fa-plus", "fa-minus");
+            } else {
+              icon.classList.replace("fa-minus", "fa-plus");
+            }
+          });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              window.scrollTo({
+                top: target.getBoundingClientRect().top + window.pageYOffset - 100,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
